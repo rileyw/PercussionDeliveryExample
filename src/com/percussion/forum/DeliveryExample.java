@@ -41,17 +41,11 @@ public class DeliveryExample extends PSBaseDeliveryHandler {
 					public void startElement(String uri, String localName,String qName, 
 			                Attributes attributes) throws SAXException {
 						System.out.println("Start Element :" + qName);
-						if (qName.equalsIgnoreCase("FIRSTNAME")) {
+						if (qName.equalsIgnoreCase("MESSAGE")) {
 							bfname = true;
 						}
-						if (qName.equalsIgnoreCase("LASTNAME")) {
+						if (qName.equalsIgnoreCase("BODY")) {
 							blname = true;
-						}
-						if (qName.equalsIgnoreCase("NICKNAME")) {
-							bnname = true;
-						}
-						if (qName.equalsIgnoreCase("SALARY")) {
-							bsalary = true;
 						}
 					}
 				 
@@ -68,16 +62,6 @@ public class DeliveryExample extends PSBaseDeliveryHandler {
 						if (blname) {
 							System.out.println("Last Name : " + new String(ch, start, length));
 							blname = false;
-						}
-				 
-						if (bnname) {
-							System.out.println("Nick Name : " + new String(ch, start, length));
-							bnname = false;
-						}
-				 
-						if (bsalary) {
-							System.out.println("Salary : " + new String(ch, start, length));
-							bsalary = false;
 						}
 				 
 					}
